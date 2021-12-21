@@ -2,10 +2,10 @@
 PyQt QTableWidget for image file explorer
 
 ## Requirements
-PyQt5
+PyQt5 >= 5.8
 
 ## Setup
-```pip install git+https://github.com/yjg30737/pyqt-image-file-explorer-table-widget.git --upgrade```
+```pip3 install git+https://github.com/yjg30737/pyqt-image-file-explorer-table-widget.git --upgrade```
 
 ## Feature
 * Being able to set column count with ```setColumnCount(columns: int)```
