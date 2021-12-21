@@ -2,12 +2,11 @@ import operator
 import os
 from collections import defaultdict
 
-from PyQt5.QtWidgets import QWidget, QTableWidget, QGridLayout, QApplication, QHBoxLayout, QPushButton, QFileDialog
+from PyQt5.QtWidgets import QWidget, QTableWidget, QHBoxLayout
+from pyqt_image_file_explorer_table_widget.imageLabelWidget import ImageLabelWidget
 
-from pyqt_image_file_explorer.imageLabelWidget import ImageLabelWidget
 
-
-class TableWidget(QTableWidget):
+class ImageFileExplorerTableWidget(QTableWidget):
     def __init__(self):
         super().__init__()
         self.__basename_absname_dict = defaultdict(str)

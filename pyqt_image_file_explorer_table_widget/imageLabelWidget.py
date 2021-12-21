@@ -4,7 +4,7 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout
 from PyQt5.QtCore import Qt
 
-from pyqt_image_file_explorer.imageWidget import ImageWidget
+from pyqt_image_file_explorer_table_widget.imageWidget import ImageWidget
 
 
 class ImageLabelWidget(QWidget):
