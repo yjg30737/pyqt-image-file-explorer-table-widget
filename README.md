@@ -52,7 +52,7 @@ class ImageFileExplorerExample(QWidget):
         if dirname:
             filenames = [os.path.join(dirname, filename) for filename in os.listdir(dirname)]
             filenames = list(filter(lambda x: os.path.splitext(x)[-1] in ['.png'],
-                                    [filename for filename in filenames]))
+                                    [filename for filename in filenames])) # In this example, png only
             self.__tableWidget.addCells(filenames)
 
     def __delete(self):
