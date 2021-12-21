@@ -1,2 +1,2 @@
-# pyqt-image-file-explorer
-PyQt image file explorer
+# pyqt-image-file-explorer-table-widget
+PyQt QTableWidget for image file explorer
