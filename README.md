@@ -7,6 +7,11 @@ PyQt5
 ## Setup
 ```pip install git+https://github.com/yjg30737/pyqt-image-file-explorer-table-widget.git --upgrade```
 
+## Feature
+* Being able to set column count with ```setColumnCount(columns: int)```
+* Being able to remove selected cells with ```removeSelectedCells()```
+* Resize friendly
+
 ## Example
 ```python
 import os
@@ -38,7 +43,6 @@ class ImageFileExplorerExample(QWidget):
         btns.setLayout(lay)
 
         self.__tableWidget.setColumnCount(6)
-        self.__tableWidget.setAllCellsAsSquare()
 
         lay = QGridLayout()
         lay.addWidget(btns)
