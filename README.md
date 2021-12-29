@@ -74,9 +74,9 @@ if __name__ == "__main__":
 
 Result
 
-![image](https://user-images.githubusercontent.com/55078043/146850027-f3f68b75-ec47-406d-ae54-0cf5f2cbf31d.png)
+![image](https://user-images.githubusercontent.com/55078043/147617499-f1072ffe-03e9-4d93-ab3a-85bfbb5efab1.png)
 
 After select add.png, addTab.png, bold.png and remove all of them
 
-![image](https://user-images.githubusercontent.com/55078043/146850857-92c70721-0e19-472d-af1d-49b2ed583c4f.png)
+![image](https://user-images.githubusercontent.com/55078043/147617508-39db065e-20cb-400d-b3aa-9802e9159ccc.png)
 
