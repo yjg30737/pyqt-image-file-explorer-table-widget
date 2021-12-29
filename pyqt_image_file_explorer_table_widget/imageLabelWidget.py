@@ -15,13 +15,7 @@ class ImageLabelWidget(QWidget):
 
     def __initUi(self, filename=''):
         self.__topWidget = ImageWidget()
-        self.__topWidget.setFixInView(False)
         self.__topWidget.setPixmap(QPixmap(filename))
-
-        imageView = self.__topWidget.get_image_view()
-
-        imageView.verticalScrollBar().blockSignals(True)
-        imageView.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
 
         self.__bottomWidget = QLabel(os.path.basename(filename))
         self.__bottomWidget.setAlignment(Qt.AlignCenter)

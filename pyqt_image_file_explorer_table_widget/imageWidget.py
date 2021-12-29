@@ -1,14 +1,10 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QGraphicsView, QGridLayout, QGraphicsScene
+from PyQt5.QtWidgets import QGraphicsView, QGraphicsScene, QGraphicsItem
 
 
-class ImageWidget(QWidget):
+class ImageWidget(QGraphicsView):
     def __init__(self):
         super().__init__()
-
-        self.__fixInViewFlag = True
-        self.__filename = ''
-
         self.__initUi()
 
     def __initUi(self):
@@ -16,14 +12,10 @@ class ImageWidget(QWidget):
         self.__scene = ''
         self.__graphicItem = ''
 
-        self.__image_view = QGraphicsView()
-
-        self.__defaultStyleSheet = self.styleSheet()
-
-        layout = QGridLayout()
-        layout.addWidget(self.__image_view)
-        layout.setContentsMargins(0, 0, 0, 0)
-        self.setLayout(layout)
+        self.verticalScrollBar().blockSignals(True)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.setStyleSheet('border: 0;')
 
     def setPixmap(self, p):
         self.__set_pixmap(p)
@@ -32,25 +24,16 @@ class ImageWidget(QWidget):
         self.__p = p
         self.__scene = QGraphicsScene()
         self.__graphicItem = self.__scene.addPixmap(self.__p)
-        self.__image_view.setScene(self.__scene)
-        self.__image_view.show()
-        if self.__fixInViewFlag:
-            self.__image_view.fitInView(self.__graphicItem, Qt.KeepAspectRatio)
+        self.setScene(self.__scene)
+        self.show()
 
     def getPixmap(self):
         return self.__p
 
-    def getFileName(self):
-        return self.__filename
-
     def resizeEvent(self, e):
-        if self.__graphicItem:
-            if self.__fixInViewFlag:
-                self.__image_view.fitInView(self.__graphicItem, Qt.KeepAspectRatio)
+        if isinstance(self.__graphicItem, QGraphicsItem):
+            real_size = self.__graphicItem.boundingRect()
+            view_size = self.rect()
+            if real_size.width() > view_size.width() or real_size.height() > view_size.height():
+                self.fitInView(self.__graphicItem, Qt.KeepAspectRatio)
         return super().resizeEvent(e)
-
-    def setFixInView(self, f: bool):
-        self.__fixInViewFlag = f
-
-    def get_image_view(self):
-        return self.__image_view
