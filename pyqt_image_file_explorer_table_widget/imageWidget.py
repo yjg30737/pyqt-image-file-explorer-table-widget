@@ -25,7 +25,6 @@ class ImageWidget(QGraphicsView):
         self.__scene = QGraphicsScene()
         self.__graphicItem = self.__scene.addPixmap(self.__p)
         self.setScene(self.__scene)
-        self.show()
 
     def getPixmap(self):
         return self.__p
