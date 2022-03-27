@@ -13,8 +13,8 @@ PyQt5 >= 5.8
 ## Feature
 * Being able to set column count with `setColumnCount(columns: int)`
 * Being able to remove selected cells with `removeSelectedCells()`
-* Set cell padding with `setCellPadding(padding: int)`
-* Set cell margin (set space between cells) with `setCellMargin(margin: int)` - This doesn't give the space between cells, just looks like it. I will figure it out how to set the space between cells properly.
+* Set cell padding with `setCellPadding(padding: int)`. No padding by defeault.
+* Set cell margin (set space between cells) with `setCellMargin(margin: int)` - This doesn't give the space between cells, just looks like it. I will figure it out how to set the space between cells properly. No margin by default.
 * Resize friendly
 * If you want to add grid(no grid by default), use `setShowGrid(f: bool)` even though this is provided by `QTableWidget` originally.
 * `showTinyImageBigger(f: bool)` to expand image which is so small that it's hard to see
