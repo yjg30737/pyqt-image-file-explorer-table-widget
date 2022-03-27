@@ -13,6 +13,7 @@ class ImageFileExplorerTableWidget(QTableWidget):
         super().__init__()
         self.__basename_absname_dict = defaultdict(str)
         self.__cellPadding = 0
+        self.__cellMargin = 0
         self.__initUi()
 
     def __initUi(self):
@@ -204,3 +205,7 @@ class ImageFileExplorerTableWidget(QTableWidget):
 
     def setCellPadding(self, cell_padding: int):
         self.__cellPadding = cell_padding
+
+    def setCellMargin(self, cell_margin: int):
+        self.__cellMargin = cell_margin
+        self.setStyleSheet(self.styleSheet() + f'QTableView::item {{ margin: {self.__cellMargin}; }}')
