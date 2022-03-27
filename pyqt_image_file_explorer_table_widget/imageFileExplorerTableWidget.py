@@ -18,6 +18,7 @@ class ImageFileExplorerTableWidget(QTableWidget):
         self.__basename_absname_dict = defaultdict(str)
         self.__cellPadding = 0
         self.__cellMargin = 0
+        self.__showTinyImageBiggerFlag = False
 
     def __initUi(self):
         self.setShowGrid(False)
@@ -78,12 +79,13 @@ class ImageFileExplorerTableWidget(QTableWidget):
         for i in range(len(filenames)):
             start_r, start_c = self.get_last_idx()
             if start_c == 0:
-                self.setRowCount(start_r+1)
+                self.setRowCount(start_r + 1)
             self.addCell(start_r, start_c, filenames[i])
 
     def addCell(self, r, c, filename: str):
         innerWidget = ImageLabelWidget(filename)
         innerWidget.setText(os.path.basename(filename))
+        innerWidget.showTinyImageBigger(self.__showTinyImageBiggerFlag)
 
         lay = QHBoxLayout()
         lay.addWidget(innerWidget)
@@ -212,3 +214,6 @@ class ImageFileExplorerTableWidget(QTableWidget):
     def setCellMargin(self, cell_margin: int):
         self.__cellMargin = cell_margin
         self.setStyleSheet(self.styleSheet() + f'QTableView::item {{ margin: {self.__cellMargin}; }}')
+
+    def showTinyImageBigger(self, f: bool):
+        self.__showTinyImageBiggerFlag = f

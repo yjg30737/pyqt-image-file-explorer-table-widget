@@ -36,3 +36,6 @@ class ImageLabelWidget(QWidget):
 
     def setText(self, text):
         self.__bottomWidget.setText(text)
+
+    def showTinyImageBigger(self, f: bool):
+        self.__topWidget.showTinyImageBigger(f)

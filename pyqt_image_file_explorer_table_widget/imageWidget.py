@@ -9,6 +9,7 @@ class ImageWidget(QGraphicsView):
         self.__initUi()
 
     def __initUi(self):
+        self.__showTinyImageBiggerFlag = False
         self.__p = ''
         self.__scene = ''
         self.__graphicItem = ''
@@ -30,10 +31,19 @@ class ImageWidget(QGraphicsView):
     def getPixmap(self):
         return self.__p
 
+    def showTinyImageBigger(self, f: bool):
+        self.__showTinyImageBiggerFlag = f
+
+    def __isTinyImageBiggerFlagActivated(self) -> bool:
+        return self.__showTinyImageBiggerFlag
+
     def resizeEvent(self, e):
         if isinstance(self.__graphicItem, QGraphicsItem):
             real_size = self.__graphicItem.boundingRect()
             view_size = self.rect()
-            if real_size.width() > view_size.width() or real_size.height() > view_size.height():
+            if self.__isTinyImageBiggerFlagActivated():
                 self.fitInView(self.__graphicItem, Qt.KeepAspectRatio)
+            else:
+                if real_size.width() > view_size.width() or real_size.height() > view_size.height():
+                    self.fitInView(self.__graphicItem, Qt.KeepAspectRatio)
         return super().resizeEvent(e)
