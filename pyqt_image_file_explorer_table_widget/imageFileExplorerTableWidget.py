@@ -16,11 +16,6 @@ class ImageFileExplorerTableWidget(QTableWidget):
         self.setShowGrid(False)
         self.horizontalHeader().setVisible(False)
         self.verticalHeader().setVisible(False)
-        self.setStyleSheet('''
-            QTableView { outline: 0; }
-            QTableView::item:hover { background-color: #DDD; }
-            QTableView::item:selected { background-color: #CCC; }
-        ''')
 
     def resizeEvent(self, e):
         self.setAllCellsAsSquare()

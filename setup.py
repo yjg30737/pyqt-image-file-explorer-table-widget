@@ -7,6 +7,7 @@ setup(
     author_email='yjg30737@gmail.com',
     license='MIT',
     packages=find_packages(),
+    package_data={'pyqt_image_file_explorer_table_widget.style': ['image.css', 'table.css']},
     description='PyQt QTableWidget for image file explorer',
     url='https://github.com/yjg30737/pyqt-image-file-explorer-table-widget.git',
     install_requires=[

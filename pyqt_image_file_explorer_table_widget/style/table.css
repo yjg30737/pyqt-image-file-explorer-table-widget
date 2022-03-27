@@ -1,0 +1,3 @@
+QTableView { outline: 0; }
+QTableView::item:hover { background-color: #DDD; }
+QTableView::item:selected { background-color: #CCC; }
