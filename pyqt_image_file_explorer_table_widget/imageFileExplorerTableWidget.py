@@ -11,10 +11,13 @@ from pyqt_image_file_explorer_table_widget.imageLabelWidget import ImageLabelWid
 class ImageFileExplorerTableWidget(QTableWidget):
     def __init__(self):
         super().__init__()
+        self.__initVal()
+        self.__initUi()
+
+    def __initVal(self):
         self.__basename_absname_dict = defaultdict(str)
         self.__cellPadding = 0
         self.__cellMargin = 0
-        self.__initUi()
 
     def __initUi(self):
         self.setShowGrid(False)
