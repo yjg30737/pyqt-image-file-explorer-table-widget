@@ -3,6 +3,8 @@ import os
 from collections import defaultdict
 
 from PyQt5.QtWidgets import QWidget, QTableWidget, QHBoxLayout
+from pyqt_resource_helper import PyQtResourceHelper
+
 from pyqt_image_file_explorer_table_widget.imageLabelWidget import ImageLabelWidget
 
 
@@ -16,6 +18,7 @@ class ImageFileExplorerTableWidget(QTableWidget):
         self.setShowGrid(False)
         self.horizontalHeader().setVisible(False)
         self.verticalHeader().setVisible(False)
+        PyQtResourceHelper.setStyleSheet([self], ['style/table.css'])
 
     def resizeEvent(self, e):
         self.setAllCellsAsSquare()

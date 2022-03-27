@@ -1,5 +1,6 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QGraphicsView, QGraphicsScene, QGraphicsItem
+from pyqt_resource_helper import PyQtResourceHelper
 
 
 class ImageWidget(QGraphicsView):
@@ -15,6 +16,7 @@ class ImageWidget(QGraphicsView):
         self.verticalScrollBar().blockSignals(True)
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        PyQtResourceHelper.setStyleSheet([self], ['style/image.css'])
 
     def setPixmap(self, p):
         self.__set_pixmap(p)
