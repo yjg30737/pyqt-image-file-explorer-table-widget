@@ -5,14 +5,16 @@ PyQt QTableWidget for image file explorer
 PyQt5 >= 5.8
 
 ## Setup
-```pip3 install git+https://github.com/yjg30737/pyqt-image-file-explorer-table-widget.git --upgrade```
+`pip3 install git+https://github.com/yjg30737/pyqt-image-file-explorer-table-widget.git --upgrade`
 
 ## Included Packages
 * <a href="https://github.com/yjg30737/pyqt-resource-helper.git">pyqt-resource-helper</a>
 
 ## Feature
-* Being able to set column count with ```setColumnCount(columns: int)```
-* Being able to remove selected cells with ```removeSelectedCells()```
+* Being able to set column count with `setColumnCount(columns: int)`
+* Being able to remove selected cells with `removeSelectedCells()`
+* Set cell padding with `setCellPadding(padding: int)`
+* Set cell margin (set space between cells) with `setCellMargin(margin: int)`
 * Resize friendly
 
 ## Example
