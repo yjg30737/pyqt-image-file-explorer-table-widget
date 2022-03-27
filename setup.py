@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pyqt-image-file-explorer-table-widget',
-    version='0.2.1',
+    version='0.2.2',
     author='Jung Gyu Yoon',
     author_email='yjg30737@gmail.com',
     license='MIT',
