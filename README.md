@@ -7,6 +7,9 @@ PyQt5 >= 5.8
 ## Setup
 ```pip3 install git+https://github.com/yjg30737/pyqt-image-file-explorer-table-widget.git --upgrade```
 
+## Included Packages
+* <a href="https://github.com/yjg30737/pyqt-resource-helper.git">pyqt-resource-helper</a>
+
 ## Feature
 * Being able to set column count with ```setColumnCount(columns: int)```
 * Being able to remove selected cells with ```removeSelectedCells()```
