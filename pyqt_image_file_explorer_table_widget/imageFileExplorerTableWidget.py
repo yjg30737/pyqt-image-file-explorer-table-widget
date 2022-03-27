@@ -12,7 +12,7 @@ class ImageFileExplorerTableWidget(QTableWidget):
     def __init__(self):
         super().__init__()
         self.__basename_absname_dict = defaultdict(str)
-        self.__padding = 0
+        self.__cellPadding = 0
         self.__initUi()
 
     def __initUi(self):
@@ -83,7 +83,7 @@ class ImageFileExplorerTableWidget(QTableWidget):
 
         lay = QHBoxLayout()
         lay.addWidget(innerWidget)
-        lay.setContentsMargins(self.__padding, self.__padding, self.__padding, self.__padding)
+        lay.setContentsMargins(self.__cellPadding, self.__cellPadding, self.__cellPadding, self.__cellPadding)
 
         widget = QWidget()
         widget.setLayout(lay)
@@ -187,7 +187,7 @@ class ImageFileExplorerTableWidget(QTableWidget):
     def moveImageCell(self, r, c, innerWidget):
         lay = QHBoxLayout()
         lay.addWidget(innerWidget)
-        lay.setContentsMargins(self.__padding, self.__padding, self.__padding, self.__padding)
+        lay.setContentsMargins(self.__cellPadding, self.__cellPadding, self.__cellPadding, self.__cellPadding)
 
         widget = QWidget()
         widget.setLayout(lay)
@@ -202,5 +202,5 @@ class ImageFileExplorerTableWidget(QTableWidget):
             del (self.__basename_absname_dict[basename])
             return super().removeCellWidget(r, c)
 
-    def setPadding(self, padding: int):
-        self.__padding = padding
+    def setCellPadding(self, cell_padding: int):
+        self.__cellPadding = cell_padding
