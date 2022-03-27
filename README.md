@@ -16,6 +16,7 @@ PyQt5 >= 5.8
 * Set cell padding with `setCellPadding(padding: int)`
 * Set cell margin (set space between cells) with `setCellMargin(margin: int)`
 * Resize friendly
+* If you want to add grid, use `setShowGrid(f: bool)` even though this is provided by `QTableWidget` originally.
 
 ## Example
 ```python
