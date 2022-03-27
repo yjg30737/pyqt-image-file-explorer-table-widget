@@ -15,7 +15,7 @@ class ImageWidget(QGraphicsView):
         self.verticalScrollBar().blockSignals(True)
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.setStyleSheet('border: 0;')
+        self.setStyleSheet('background-color: transparent; border: 0;')
 
     def setPixmap(self, p):
         self.__set_pixmap(p)
