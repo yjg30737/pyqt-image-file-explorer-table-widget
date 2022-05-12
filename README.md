@@ -5,7 +5,7 @@ PyQt QTableWidget for image file explorer
 PyQt5 >= 5.8
 
 ## Setup
-`pip3 install git+https://github.com/yjg30737/pyqt-image-file-explorer-table-widget.git --upgrade`
+`python -m pip install pyqt-image-file-explorer-table-widget`
 
 ## Included Packages
 * <a href="https://github.com/yjg30737/pyqt-resource-helper.git">pyqt-resource-helper</a>
